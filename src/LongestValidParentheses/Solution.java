@@ -11,7 +11,7 @@ public class Solution {
     	// map contains count for paired parentheses so far for each location
     	HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
     	// curPaired: total length of paired parentheses at all locations
-    	// curPaired is used to detect early ending condition
+    	// curPaired is used to detect early ending condition only
     	int max = 0, curPaired = 0;
     	int len = s.length();
     	for (int i=0;i<len;i++) {
@@ -46,7 +46,7 @@ public class Solution {
     					if (length > max)
     						max = length;
     				if (len-1-i <= max)
-    					break;
+    					return max;
     				map.clear();
     				curPaired = 0;
     				Q.clear();
