@@ -1,7 +1,5 @@
 package BalancedBinaryTree;
 
-import java.util.Stack;
-
 public class Solution {
     public boolean isBalanced(TreeNode root) {
         return getHeight(root) >= 0;
