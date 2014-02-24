@@ -4,12 +4,13 @@ public class Solution {
     public boolean hasPathSum(TreeNode root, int sum) {
         if (root == null) 
         	return false;
-        sum -= root.val;
-        if (root.left != null && hasPathSum(root.left, sum))
-        	return true;
-        if (root.right != null && hasPathSum(root.right, sum))
-        	return true;
-        if (root.left == null && root.right == null && sum == 0)
+        if (root.left != null || root.right != null) {
+            sum -= root.val;
+            if (hasPathSum(root.left, sum))
+            	return true;
+            if (hasPathSum(root.right, sum))
+            	return true;
+        } else if (sum == root.val)
         	return true;
         return false;
     }
