@@ -13,7 +13,8 @@ public class Solution {
             	if (cur.right != null)
             		s.push(cur.right);
         		cur.right = cur.left;
-        		cur = cur.left;
+        		cur.left = null;
+        		cur = cur.right;
         	} else if (cur.right != null)
         		cur = cur.right;
         	else if (!s.isEmpty()){
