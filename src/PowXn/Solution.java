@@ -11,28 +11,30 @@ public class Solution {
         		return Double.POSITIVE_INFINITY;
         }
         boolean negative = false;
-        if (x < 0 && n % 2 == 1)
+        if (x < 0 && (n&1) > 0)
         	negative = true;
         x = Math.abs(x);
         if (n < 0) {
         	x = 1/x;
         	n = -n;
         }
-        double p = x;
         if (x != 1) {
-            for (int i=1;i<n;i++) {
-        	    if (p == Double.MAX_VALUE) break;
-        	    if (p == 0) break;
-        	    p *= x;
+            double p = 1, cur = x;
+            int e = 0;
+            while ((e < Integer.SIZE) && n >= (1<<e)) {
+            	if ((n&(1<<e)) > 0) {
+            		p *= cur;
+            		if (p == Double.MAX_VALUE) break;
+            		if (p == 0) break;
+            	}
+        	    e++;
+        	    cur *= cur;
             }
+            x = p;
         }
         if (negative)
-        	return -p;
+        	return -x;
         else
-        	return p;
-    }
-    
-    public static void main(String[] args) {
-    	System.out.print((-Double.MAX_VALUE)+" "+(1+Double.MAX_VALUE)+" "+(Double.MIN_VALUE*0.1)+" "+(1/Double.MAX_VALUE));
+        	return x;
     }
 }
