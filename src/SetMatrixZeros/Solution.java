@@ -3,6 +3,8 @@ package SetMatrixZeros;
 import java.util.Arrays;
 
 public class Solution {
+	// leetcode discuss has in place solution without use extra space
+	
     // can't assume Integer.MAX_VALUE not appear in the matrix
     // use O(n) space instead then
     public void setZeroes(int[][] matrix) {
