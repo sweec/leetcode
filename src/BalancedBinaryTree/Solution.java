@@ -1,5 +1,7 @@
 package BalancedBinaryTree;
 
+import Utility.TreeNode;
+
 public class Solution {
     public boolean isBalanced(TreeNode root) {
         return getHeight(root) >= 0;
@@ -18,12 +20,5 @@ public class Solution {
     	if (Math.abs(h1-h2) > 1)
     		return -1;
     	return Math.max(h1, h2)+1;
-    }
-    
-    public class TreeNode {
-    	int val;
-    	TreeNode left;
-    	TreeNode right;
-    	TreeNode(int x) { val = x; }
     }
 }

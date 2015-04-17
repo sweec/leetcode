@@ -1,5 +1,7 @@
 package ValidateBinarySearchTree;
 
+import Utility.TreeNode;
+
 public class Solution {
     public boolean isValidBST(TreeNode root) {
     	if (root == null)
@@ -15,12 +17,5 @@ public class Solution {
     	if (root.right != null && !isValidBST(root.right, root.val, max))
     			return false;
     	return true;
-    }
-    
-    public class TreeNode {
-    	int val;
-    	TreeNode left;
-    	TreeNode right;
-    	TreeNode(int x) { val = x; }
     }
 }

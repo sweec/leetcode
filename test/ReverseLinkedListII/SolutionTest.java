@@ -4,17 +4,17 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import ReverseLinkedListII.Solution.ListNode;
+import Utility.ListNode;
 
 public class SolutionTest {
 
 	@Test
 	public void testReverseBetween() {
 		Solution s = new Solution();
-		ListNode head = s.new ListNode(1);
+		ListNode head = new ListNode(1);
 		ListNode cur = head;
 		for (int i = 2;i <= 5;i++) {
-			ListNode node = s.new ListNode(i);
+			ListNode node = new ListNode(i);
 			cur.next = node;
 			cur = node;
 		}

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
+import Utility.Point;
+
 public class Solution {
     public int maxPoints(Point[] points) {
     	if (points == null)
@@ -87,12 +89,5 @@ public class Solution {
 			}
     	}
     	return max;
-    }
-
-    class Point {
-    	int x;
-    	int y;
-    	Point() { x = 0; y = 0; }
-    	Point(int a, int b) { x = a; y = b; }
     }
 }

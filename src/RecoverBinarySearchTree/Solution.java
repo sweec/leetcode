@@ -1,5 +1,7 @@
 package RecoverBinarySearchTree;
 
+import Utility.TreeNode;
+
 public class Solution {
     public void recoverTree(TreeNode root) {
     	// Used Morris Traversal with hint from leetcode discuss
@@ -42,12 +44,5 @@ public class Solution {
         	n1.val = n2.val;
         	n2.val = temp;
         }
-    }
-
-    public class TreeNode {
-    	int val;
-    	TreeNode left;
-    	TreeNode right;
-    	TreeNode(int x) { val = x; }
     }
 }

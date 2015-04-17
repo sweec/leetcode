@@ -6,16 +6,16 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import CloneGraph.Solution.UndirectedGraphNode;
+import Utility.UndirectedGraphNode;
 
 public class SolutionTest {
 
 	@Test
 	public void testCloneGraph() {
 		Solution s = new Solution();
-		UndirectedGraphNode node0 = s.new UndirectedGraphNode(0);
-		UndirectedGraphNode node1 = s.new UndirectedGraphNode(1);
-		UndirectedGraphNode node2 = s.new UndirectedGraphNode(2);
+		UndirectedGraphNode node0 = new UndirectedGraphNode(0);
+		UndirectedGraphNode node1 = new UndirectedGraphNode(1);
+		UndirectedGraphNode node2 = new UndirectedGraphNode(2);
 		node0.neighbors.add(node1); node0.neighbors.add(node2);
 		node1.neighbors.add(node0); node1.neighbors.add(node2);
 		node2.neighbors.add(node0); node2.neighbors.add(node1);

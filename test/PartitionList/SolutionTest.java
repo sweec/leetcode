@@ -4,18 +4,18 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import PartitionList.Solution.ListNode;
+import Utility.ListNode;
 
 public class SolutionTest {
 
 	@Test
 	public void testPartition() {
 		Solution s = new Solution();
-		ListNode head = s.new ListNode(1);
+		ListNode head = new ListNode(1);
 		ListNode cur = head;
 		int[] data = {1, 4, 3, 2, 5, 2};
 		for (int i = 1;i <= 5;i++) {
-			ListNode node = s.new ListNode(data[i]);
+			ListNode node = new ListNode(data[i]);
 			cur.next = node;
 			cur = node;
 		}

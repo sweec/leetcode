@@ -1,5 +1,7 @@
 package MergeTwoSortedLists;
 
+import Utility.ListNode;
+
 public class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null)
@@ -28,14 +30,5 @@ public class Solution {
         	pre = pre.next;
         } while (true);
         return head;
-    }
-
-    public class ListNode {
-    	int val;
-    	ListNode next;
-    	ListNode(int x) {
-    		val = x;
-    		next = null;
-    	}
     }
 }

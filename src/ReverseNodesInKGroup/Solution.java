@@ -1,5 +1,7 @@
 package ReverseNodesInKGroup;
 
+import Utility.ListNode;
+
 public class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
     	if (k < 2) return head;
@@ -34,13 +36,4 @@ public class Solution {
 		} while (true);
 		return fakeHead.next;
 	}
-
-    public class ListNode {
-    	int val;
-    	ListNode next;
-    	ListNode(int x) {
-    		val = x;
-    		next = null;
-    	}
-    }
 }

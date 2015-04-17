@@ -2,6 +2,8 @@ package PathSumII;
 
 import java.util.ArrayList;
 
+import Utility.TreeNode;
+
 public class Solution {
     public ArrayList<ArrayList<Integer>> pathSum(TreeNode root, int sum) {
     	ArrayList<ArrayList<Integer>> paths = new ArrayList<ArrayList<Integer>>();
@@ -25,12 +27,5 @@ public class Solution {
         	paths.add(path);
         }
         return paths;
-    }
-
-    public class TreeNode {
-    	int val;
-    	TreeNode left;
-    	TreeNode right;
-    	TreeNode(int x) { val = x; }
     }
 }

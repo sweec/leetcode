@@ -1,5 +1,7 @@
 package SumRootToLeafNumbers;
 
+import Utility.TreeNode;
+
 public class Solution {
     public int sumNumbers(TreeNode root) {
         if (root == null)
@@ -17,12 +19,5 @@ public class Solution {
     	if (root.left == null && root.right == null)
     		sum += num;
     	return sum;
-    }
-    
-    public class TreeNode {
-    	int val;
-    	TreeNode left;
-    	TreeNode right;
-    	TreeNode(int x) { val = x; }
     }
 }

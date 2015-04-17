@@ -1,5 +1,7 @@
 package LinkedListCycle;
 
+import Utility.ListNode;
+
 public class Solution {
     public boolean hasCycle(ListNode head) {
         ListNode run1 = head, run2 = head;
@@ -13,14 +15,5 @@ public class Solution {
         	run1 = run1.next;
         }
         return false;
-    }
- 
-    public class ListNode {
-    	int val;
-    	ListNode next;
-    	ListNode(int x) {
-    		val = x;
-    		next = null;
-    	}
     }
 }

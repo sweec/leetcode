@@ -1,5 +1,7 @@
 package BinaryTreeMaximumPathSum;
 
+import Utility.TreeNode;
+
 public class Solution {
     public int maxPathSum(TreeNode root) {
         if (root == null)
@@ -35,12 +37,5 @@ public class Solution {
     private class MaxData {
     	int sum;
     	int path;
-    }
-    
-    public class TreeNode {
-    	int val;
-    	TreeNode left;
-    	TreeNode right;
-    	TreeNode(int x) { val = x; }
     }
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import InsertInterval.Solution.Interval;
+import Utility.Interval;
 
 public class SolutionTest {
 
@@ -20,11 +20,11 @@ public class SolutionTest {
 		ArrayList<Interval> intervals = new ArrayList<Interval>();
 		ArrayList<Interval> ans = new ArrayList<Interval>();
 		for (int i=0;i<input.length;i++)
-			intervals.add(s.new Interval(input[i][0], input[i][1]));
+			intervals.add(new Interval(input[i][0], input[i][1]));
 		for (int i=0;i<output.length;i++)
-			ans.add(s.new Interval(output[i][0], output[i][1]));
-		//ArrayList<Interval> mis = s.insert(intervals, s.new Interval(4, 9));
-		ArrayList<Interval> mis = s.insert(intervals, s.new Interval(2, 5));
+			ans.add(new Interval(output[i][0], output[i][1]));
+		//ArrayList<Interval> mis = s.insert(intervals, new Interval(4, 9));
+		ArrayList<Interval> mis = s.insert(intervals, new Interval(2, 5));
 		assertEquals("Merge size not agree", ans.size(), mis.size());
 		for (int i=0;i<ans.size();i++) {
 			assertEquals("start not agree", ans.get(i).start, mis.get(i).start);

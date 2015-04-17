@@ -1,5 +1,7 @@
 package RotateList;
 
+import Utility.ListNode;
+
 public class Solution {
     public ListNode rotateRight(ListNode head, int n) {
         if (head == null || head.next == null)
@@ -27,14 +29,5 @@ public class Solution {
         head = preN.next;
         preN.next = null;
         return head;
-    }
- 
-    public class ListNode {
-    	int val;
-    	ListNode next;
-    	ListNode(int x) {
-    		val = x;
-    		next = null;
-    	}
     }
 }

@@ -1,5 +1,7 @@
 package SortList;
 
+import Utility.ListNode;
+
 public class Solution {
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null)
@@ -59,14 +61,5 @@ public class Solution {
         	step *= 2;
         } while (true);
         return fh.next;
-    }
-
-    class ListNode {
-    	int val;
-    	ListNode next;
-    	ListNode(int x) {
-    		val = x;
-    		next = null;
-    	}
     }
 }

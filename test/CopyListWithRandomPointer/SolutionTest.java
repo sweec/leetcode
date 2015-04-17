@@ -4,18 +4,18 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import CopyListWithRandomPointer.Solution.RandomListNode;
+import Utility.RandomListNode;
 
 public class SolutionTest {
 
 	@Test
 	public void testCopyRandomList() {
 		Solution s = new Solution();
-		RandomListNode head = s.new RandomListNode(1);
+		RandomListNode head = new RandomListNode(1);
 		RandomListNode cur = head;
 		int[] data = {1, 2, 3, 4, 5};
 		for (int i = 1;i < data.length;i++) {
-			RandomListNode node = s.new RandomListNode(data[i]);
+			RandomListNode node = new RandomListNode(data[i]);
 			cur.next = node;
 			node.random = cur;
 			cur = node;

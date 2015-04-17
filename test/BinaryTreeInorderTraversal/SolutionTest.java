@@ -6,17 +6,17 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import BinaryTreeInorderTraversal.Solution.TreeNode;
+import Utility.TreeNode;
 
 public class SolutionTest {
 
 	@Test
 	public void testInorderTraversal() {
 		Solution s = new Solution();
-		TreeNode root = s.new TreeNode(1);
-		TreeNode right = s.new TreeNode(2);
+		Utility.TreeNode root = new TreeNode(1);
+		TreeNode right = new TreeNode(2);
 		root.right = right;
-		TreeNode left = s.new TreeNode(3);
+		TreeNode left = new TreeNode(3);
 		right.left = left;
 		int[] vals = {1, 3, 2};
 		ArrayList<Integer> vs = s.inorderTraversal(root);
