@@ -2,8 +2,6 @@ package BinaryTreeRightSideView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
-
 import Utility.TreeNode;
 
 public class Solution {
@@ -14,6 +12,7 @@ public class Solution {
         //rightSideView(root, view, 1);
         
         // method 2 stack, 255ms
+        /*
         Stack<TreeNode> sNode = new Stack<TreeNode>();
         Stack<Integer> sLevel = new Stack<Integer>();
         sNode.push(root);
@@ -30,7 +29,31 @@ public class Solution {
                 sNode.push(node.right);
                 sLevel.push(level+1);
             }
-        }
+        }*/
+        
+        // method 3 record each layer, 277ms
+        /*
+        ArrayList<TreeNode> list = new ArrayList<TreeNode>();
+        list.add(root);
+        while (!list.isEmpty()) {
+            view.add(list.get(0).val);
+            ArrayList<TreeNode> next = new ArrayList<TreeNode>();
+            for (TreeNode node:list) {
+                if (node.right != null)
+                    next.add(node.right);
+                if (node.left != null)
+                    next.add(node.left);
+            }
+            list = next;
+        }*/
+        
+        // method 4 recursive on left and right, compare and merge, 274ms
+        view.add(root.val);
+        List<Integer> leftview = rightSideView(root.left);
+        List<Integer> rightview = rightSideView(root.right);
+        for (int val:rightview) view.add(val);
+        for (int i=rightview.size();i<leftview.size();i++)
+        	view.add(leftview.get(i));
         return view;
     }
     /*
