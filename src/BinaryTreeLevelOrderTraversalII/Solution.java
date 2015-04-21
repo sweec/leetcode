@@ -2,6 +2,8 @@ package BinaryTreeLevelOrderTraversalII;
 
 import java.util.ArrayList;
 
+import Utility.TreeNode;
+
 public class Solution {
     public ArrayList<ArrayList<Integer>> levelOrderBottom(TreeNode root) {
     	ArrayList<ArrayList<Integer>> lot = new ArrayList<ArrayList<Integer>>();
@@ -30,12 +32,5 @@ public class Solution {
     		b--;
     	}
     	return lot;
-    }
-    
-    public class TreeNode {
-    	int val;
-    	TreeNode left;
-    	TreeNode right;
-    	TreeNode(int x) { val = x; }
     }
 }

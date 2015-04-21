@@ -2,6 +2,8 @@ package BinaryTreeZigzagLevelOrderTraversal;
 
 import java.util.ArrayList;
 
+import Utility.TreeNode;
+
 public class Solution {
     public ArrayList<ArrayList<Integer>> zigzagLevelOrder(TreeNode root) {
     	ArrayList<ArrayList<Integer>> vals = new ArrayList<ArrayList<Integer>>();
@@ -28,12 +30,5 @@ public class Solution {
     		goLeft = !goLeft;
     	}
     	return vals;
-    }
-
-    public class TreeNode {
-    	int val;
-    	TreeNode left;
-    	TreeNode right;
-    	TreeNode(int x) { val = x; }
     }
 }

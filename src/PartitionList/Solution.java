@@ -1,5 +1,7 @@
 package PartitionList;
 
+import Utility.ListNode;
+
 public class Solution {
 	public ListNode partition(ListNode head, int x) {
 		ListNode last = null;	// last node before 1st element >= x
@@ -30,13 +32,4 @@ public class Solution {
 		}
 		return head;
 	}
- 
-    public class ListNode {
-    	int val;
-    	ListNode next;
-    	ListNode(int x) {
-    		val = x;
-    		next = null;
-    	}
-    }
 }

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Stack;
 
+import Utility.UndirectedGraphNode;
+
 public class Solution {
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
     	if (node == null)
@@ -32,10 +34,4 @@ public class Solution {
         }
         return copy;
     }
-
-    class UndirectedGraphNode {
-    	int label;
-    	ArrayList<UndirectedGraphNode> neighbors;
-    	UndirectedGraphNode(int x) { label = x; neighbors = new ArrayList<UndirectedGraphNode>(); }
-    };
 }

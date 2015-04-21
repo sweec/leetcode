@@ -6,20 +6,20 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import BinaryTreeLevelOrderTraversal.Solution.TreeNode;
+import Utility.TreeNode;
 
 public class SolutionTest {
 
 	@Test
 	public void testLevelOrder() {
 		Solution s = new Solution();
-		TreeNode r1 = s.new TreeNode(1);
-		r1.left = s.new TreeNode(2);
-		r1.right = s.new TreeNode(2);
-		r1.left.left = s.new TreeNode(3);
-		r1.left.right = s.new TreeNode(4);
-		r1.right.left = s.new TreeNode(4);
-		r1.right.right = s.new TreeNode(3);
+		TreeNode r1 = new TreeNode(1);
+		r1.left = new TreeNode(2);
+		r1.right = new TreeNode(2);
+		r1.left.left = new TreeNode(3);
+		r1.left.right = new TreeNode(4);
+		r1.right.left = new TreeNode(4);
+		r1.right.right = new TreeNode(3);
 		int[][] vals = {{1}, {2, 2}, {3, 4, 4, 3}};
 		ArrayList<ArrayList<Integer>> lot = s.levelOrder(r1);
 		for (int i=0;i<vals.length;i++)

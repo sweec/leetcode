@@ -4,18 +4,18 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import RemoveDuplicatesFromSortedList.Solution.ListNode;
+import Utility.ListNode;
 
 public class SolutionTest {
 
 	@Test
 	public void testDeleteDuplicates() {
 		Solution s = new Solution();
-		ListNode head = s.new ListNode(1);
+		ListNode head = new ListNode(1);
 		ListNode cur = head;
 		int[] data = {1, 1, 2};
 		for (int i = 1;i < data.length;i++) {
-			ListNode node = s.new ListNode(data[i]);
+			ListNode node = new ListNode(data[i]);
 			cur.next = node;
 			cur = node;
 		}
@@ -27,11 +27,11 @@ public class SolutionTest {
 			cur = cur.next;
 		}
 		
-		head = s.new ListNode(1);
+		head = new ListNode(1);
 		cur = head;
 		int[] data2 = {1, 1, 2, 3, 3};
 		for (int i = 1;i < data2.length;i++) {
-			ListNode node = s.new ListNode(data2[i]);
+			ListNode node = new ListNode(data2[i]);
 			cur.next = node;
 			cur = node;
 		}

@@ -1,5 +1,7 @@
 package RemoveDuplicatesFromSortedListII;
 
+import Utility.ListNode;
+
 public class Solution {
     public ListNode deleteDuplicates(ListNode head) {
         ListNode pre = null, cur = head, next;
@@ -18,14 +20,5 @@ public class Solution {
          	cur = next;
         }
         return head;
-    }
- 
-    public class ListNode {
-    	int val;
-    	ListNode next;
-    	ListNode(int x) {
-    		val = x;
-    		next = null;
-    	}
     }
 }

@@ -2,35 +2,23 @@ package ReverseWordsInAString;
 
 public class Solution {
     public String reverseWords(String s) {
-        if (s == null || s.isEmpty())
-        	return "";
-        int len = s.length();
-        int beg = 0, end = len-1;
-        for (;beg<len;beg++)
-        	if (!Character.isWhitespace(s.charAt(beg)))
-        		break;
-        if (beg == len)
-        	return "";
-        for (;end>=0;end--)
-        	if (!Character.isWhitespace(s.charAt(end)))
-        		break;
         StringBuffer sentence = new StringBuffer();
-        StringBuffer sb = null;
-        for (int i=end;i>=beg;i--) {
+        StringBuffer sb = new StringBuffer();
+        for (int i=s.length()-1;i>=0;i--) {
         	char c = s.charAt(i);
         	if (Character.isWhitespace(c)) {
-        		if (sb != null) {
+        		if (sb.length() > 0) {
         			sentence.append(sb.reverse()+" ");
-        			sb = null;
+        			sb.setLength(0);;
         		}
-        	} else {
-        		if (sb == null)
-        			sb = new StringBuffer();
+        	} else
         		sb.append(c);
-        	}
         }
-        if (sb != null)
+        if (sb.length() > 0)
         	sentence.append(sb.reverse());
+        int len = sentence.length();
+        if (len>0 && sentence.charAt(len-1) == ' ')
+        	sentence.setLength(len-1);
         return sentence.toString();
     }
 }

@@ -1,5 +1,7 @@
 package ReOrderList;
 
+import Utility.ListNode;
+
 public class Solution {
     public void reorderList(ListNode head) {
     	// get the length of list
@@ -36,14 +38,5 @@ public class Solution {
         	node2.next.next = temp;
         	node2 = temp;
         }
-    }
- 
-    public class ListNode {
-    	int val;
-    	ListNode next;
-    	ListNode(int x) {
-    		val = x;
-    		next = null;
-    	}
     }
 }

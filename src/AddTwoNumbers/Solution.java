@@ -1,5 +1,7 @@
 package AddTwoNumbers;
 
+import Utility.ListNode;
+
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
     	if (l1 == null && l2 == null)
@@ -51,14 +53,5 @@ public class Solution {
         	cur.next = node;
         }
         return head;
-    }
-    
-    public class ListNode {
-    	int val;
-    	ListNode next;
-    	ListNode(int x) {
-    		val = x;
-    		next = null;
-    	}
     }
 }

@@ -4,16 +4,16 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import RecoverBinarySearchTree.Solution.TreeNode;
+import Utility.TreeNode;
 
 public class SolutionTest {
 
 	@Test
 	public void testRecoverTree() {
 		Solution s = new Solution();
-		TreeNode root = s.new TreeNode(1);
-		root.right = s.new TreeNode(3);
-		root.left = s.new TreeNode(2);
+		TreeNode root = new TreeNode(1);
+		root.right = new TreeNode(3);
+		root.left = new TreeNode(2);
 		s.recoverTree(root);
 		assertEquals("node 1 not agree", 2, root.val);
 		assertEquals("node 2 not agree", 1, root.left.val);

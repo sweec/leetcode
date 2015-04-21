@@ -2,6 +2,8 @@ package BinaryTreePostorderTraversal;
 
 import java.util.ArrayList;
 
+import Utility.TreeNode;
+
 public class Solution {
     public ArrayList<Integer> postorderTraversal(TreeNode root) {
     	ArrayList<Integer> vals = new ArrayList<Integer>();
@@ -15,12 +17,5 @@ public class Solution {
     		postorderTraversal(root.right, vals);
     		vals.add(root.val);
     	}
-    }
-    
-    public class TreeNode {
-    	int val;
-    	TreeNode left;
-    	TreeNode right;
-    	TreeNode(int x) { val = x; }
     }
 }

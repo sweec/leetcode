@@ -1,5 +1,7 @@
 package PathSum;
 
+import Utility.TreeNode;
+
 public class Solution {
     public boolean hasPathSum(TreeNode root, int sum) {
         if (root == null) 
@@ -13,12 +15,5 @@ public class Solution {
         } else if (sum == root.val)
         	return true;
         return false;
-    }
-
-    public class TreeNode {
-    	int val;
-    	TreeNode left;
-    	TreeNode right;
-    	TreeNode(int x) { val = x; }
     }
 }

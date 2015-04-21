@@ -2,6 +2,8 @@ package MergeIntervals;
 
 import java.util.ArrayList;
 
+import Utility.Interval;
+
 public class Solution {
     public ArrayList<Interval> merge(ArrayList<Interval> intervals) {
         if (intervals == null)
@@ -88,12 +90,5 @@ public class Solution {
     		else
     			b = m;
     	} while (true);
-    }
-    
-    public class Interval {
-    	int start;
-    	int end;
-    	Interval() { start = 0; end = 0; }
-    	Interval(int s, int e) { start = s; end = e; }
     }
 }

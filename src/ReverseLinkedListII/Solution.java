@@ -1,5 +1,7 @@
 package ReverseLinkedListII;
 
+import Utility.ListNode;
+
 public class Solution {
     public ListNode reverseBetween(ListNode head, int m, int n) {
         ListNode pre = null, cur = head;
@@ -24,14 +26,5 @@ public class Solution {
         	pre.next = cur;
         nodeM.next = next;
         return head;
-    }
-
-    public class ListNode {
-    	int val;
-    	ListNode next;
-    	ListNode(int x) {
-    		val = x;
-    		next = null;
-    	}
     }
 }

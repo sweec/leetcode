@@ -1,5 +1,8 @@
 package ConvertSortedListToBinaryTree;
 
+import Utility.ListNode;
+import Utility.TreeNode;
+
 public class Solution {
     public TreeNode sortedListToBST(ListNode head) {
         int len = 0;
@@ -27,18 +30,5 @@ public class Solution {
     	if (len > count+1)
     		root.right = sortedListToBST(cur.next, len-count-1);
     	return root;
-    }
-
-    public class ListNode {
-    	int val;
-    	ListNode next;
-    	ListNode(int x) { val = x; next = null; }
-    }
-
-    public class TreeNode {
-    	int val;
-    	TreeNode left;
-    	TreeNode right;
-    	TreeNode(int x) { val = x; }
     }
 }

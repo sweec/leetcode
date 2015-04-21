@@ -2,6 +2,8 @@ package SymmetricTree;
 
 import java.util.Stack;
 
+import Utility.TreeNode;
+
 public class Solution {
     public boolean isSymmetric(TreeNode root) {
         if (root == null)
@@ -29,12 +31,5 @@ public class Solution {
         	}
         } while (true);
         
-    }
-    
-    public class TreeNode {
-    	int val;
-    	TreeNode left;
-    	TreeNode right;
-    	TreeNode(int x) { val = x; }
     }
 }

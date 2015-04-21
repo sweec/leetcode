@@ -2,6 +2,8 @@ package MinimumDepthOfBinaryTree;
 
 import java.util.ArrayList;
 
+import Utility.TreeNode;
+
 public class Solution {
     public int minDepth(TreeNode root) {
         if (root == null)
@@ -23,12 +25,5 @@ public class Solution {
         	cur = next;
         }
         return min;
-    }
-
-    public class TreeNode {
-    	int val;
-    	TreeNode left;
-    	TreeNode right;
-    	TreeNode(int x) { val = x; }
     }
 }

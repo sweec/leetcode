@@ -6,18 +6,18 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import BinaryTreeZigzagLevelOrderTraversal.Solution.TreeNode;
+import Utility.TreeNode;
 
 public class SolutionTest {
 
 	@Test
 	public void testZigzagLevelOrder() {
 		Solution s = new Solution();
-		TreeNode root = s.new TreeNode(3);
-		root.left = s.new TreeNode(9);
-		root.right = s.new TreeNode(20);
-		root.right.left = s.new TreeNode(15);
-		root.right.right = s.new TreeNode(7);
+		TreeNode root = new TreeNode(3);
+		root.left = new TreeNode(9);
+		root.right = new TreeNode(20);
+		root.right.left = new TreeNode(15);
+		root.right.right = new TreeNode(7);
 		int[][] answer = {{3}, {20, 9}, {15, 7}};
 		ArrayList<ArrayList<Integer>> vals = s.zigzagLevelOrder(root);
 		for (int i=0;i<answer.length;i++) {

@@ -4,18 +4,18 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import ConvertSortedListToBinaryTree.Solution.ListNode;
-import ConvertSortedListToBinaryTree.Solution.TreeNode;
+import Utility.ListNode;
+import Utility.TreeNode;
 
 public class SolutionTest {
 
 	@Test
 	public void testSortedListToBST() {
 		Solution s = new Solution();
-		ListNode head = s.new ListNode(1);
-		head.next = s.new ListNode(2);
-		head.next.next = s.new ListNode(3);
-		head.next.next.next = s.new ListNode(4);
+		ListNode head = new ListNode(1);
+		head.next = new ListNode(2);
+		head.next.next = new ListNode(3);
+		head.next.next.next = new ListNode(4);
 		TreeNode tr = s.sortedListToBST(head);
 		assertEquals("root value wrong", 3, tr.val);
 		assertEquals("root.left value wrong", 2, tr.left.val);

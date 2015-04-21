@@ -4,22 +4,22 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import PathSum.Solution.TreeNode;
+import Utility.TreeNode;
 
 public class SolutionTest {
 
 	@Test
 	public void testHasPathSum() {
 		Solution s = new Solution();
-		TreeNode root = s.new TreeNode(5);
-		root.left = s.new TreeNode(4);
-		root.right = s.new TreeNode(8);
-		root.left.left = s.new TreeNode(11);
-		root.right.left = s.new TreeNode(13);
-		root.right.right = s.new TreeNode(4);
-		root.left.left.left = s.new TreeNode(7);
-		root.left.left.right = s.new TreeNode(2);
-		root.right.right.right = s.new TreeNode(1);
+		TreeNode root = new TreeNode(5);
+		root.left = new TreeNode(4);
+		root.right = new TreeNode(8);
+		root.left.left = new TreeNode(11);
+		root.right.left = new TreeNode(13);
+		root.right.right = new TreeNode(4);
+		root.left.left.left = new TreeNode(7);
+		root.left.left.right = new TreeNode(2);
+		root.right.right.right = new TreeNode(1);
 		int sum = 22;
 		assertEquals("Wrong result", true, s.hasPathSum(root, sum));
 		sum = 23;

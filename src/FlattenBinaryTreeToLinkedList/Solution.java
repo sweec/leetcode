@@ -2,6 +2,8 @@ package FlattenBinaryTreeToLinkedList;
 
 import java.util.Stack;
 
+import Utility.TreeNode;
+
 public class Solution {
     public void flatten(TreeNode root) {
     	if (root == null)
@@ -24,12 +26,5 @@ public class Solution {
         	} else
         		break;
         } while (true);
-    }
-
-    public class TreeNode {
-    	int val;
-    	TreeNode left;
-    	TreeNode right;
-    	TreeNode(int x) { val = x; }
     }
 }

@@ -4,18 +4,18 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import LinkedListCycleII.Solution.ListNode;
+import Utility.ListNode;
 
 public class SolutionTest {
 
 	@Test
 	public void testDetectCycle() {
 		Solution s = new Solution();
-		ListNode head = s.new ListNode(1);
+		ListNode head = new ListNode(1);
 		ListNode cur = head, mid = null, node = head;
 		int[] data = {1, 4, 3, 2, 5, 2};
 		for (int i = 1;i <= 5;i++) {
-			node = s.new ListNode(data[i]);
+			node = new ListNode(data[i]);
 			cur.next = node;
 			cur = node;
 			if (i ==2)

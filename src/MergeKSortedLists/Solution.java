@@ -2,6 +2,8 @@ package MergeKSortedLists;
 
 import java.util.ArrayList;
 
+import Utility.ListNode;
+
 public class Solution {
 	
 	public ListNode mergeKLists(ArrayList<ListNode> lists) {
@@ -74,13 +76,4 @@ public class Solution {
 			}
 		} while (true);
 	}
-	
-    public class ListNode {
-    	int val;
-    	ListNode next;
-    	ListNode(int x) {
-    		val = x;
-    		next = null;
-    	}
-    }
 }

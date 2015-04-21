@@ -1,5 +1,7 @@
 package InsertionSortList;
 
+import Utility.ListNode;
+
 public class Solution {
     public ListNode insertionSortList(ListNode head) {
     	if (head == null)
@@ -22,14 +24,5 @@ public class Solution {
         	}
         }
         return fh.next;
-    }
-
-    public class ListNode {
-    	int val;
-    	ListNode next;
-    	ListNode(int x) {
-    		val = x;
-    		next = null;
-    	}
     }
 }

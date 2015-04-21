@@ -2,6 +2,8 @@ package InsertInterval;
 
 import java.util.ArrayList;
 
+import Utility.Interval;
+
 public class Solution {
     public ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
     	ArrayList<Interval> mis = intervals;
@@ -85,12 +87,5 @@ public class Solution {
     		else
     			b = m;
     	} while (true);
-    }
-    
-    public class Interval {
-    	int start;
-    	int end;
-    	Interval() { start = 0; end = 0; }
-    	Interval(int s, int e) { start = s; end = e; }
     }
 }

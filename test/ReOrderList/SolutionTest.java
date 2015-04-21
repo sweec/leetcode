@@ -4,18 +4,18 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import ReOrderList.Solution.ListNode;
+import Utility.ListNode;
 
 public class SolutionTest {
 
 	@Test
 	public void testReorderList() {
 		Solution s = new Solution();
-		ListNode head = s.new ListNode(1);
+		ListNode head = new ListNode(1);
 		ListNode cur = head;
 		int[] data = {1, 2, 3, 4, 5, 6};
 		for (int i = 1;i < data.length;i++) {
-			ListNode node = s.new ListNode(data[i]);
+			ListNode node = new ListNode(data[i]);
 			cur.next = node;
 			cur = node;
 		}

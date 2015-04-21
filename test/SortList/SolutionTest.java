@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import SortList.Solution.ListNode;
+import Utility.ListNode;
 
 public class SolutionTest {
 
@@ -14,9 +14,9 @@ public class SolutionTest {
 	public void testSortList() {
 		Solution s = new Solution();
 		int[] vals = {19, 13, 15, 9, 3, 4, 2, 1};
-		ListNode head = s.new ListNode(0), cur = head;
+		ListNode head = new ListNode(0), cur = head;
 		for (int i=0;i<vals.length;i++) {
-			cur.next = s.new ListNode(vals[i]);
+			cur.next = new ListNode(vals[i]);
 			cur = cur.next;
 		}
 		head = s.sortList(head.next);
