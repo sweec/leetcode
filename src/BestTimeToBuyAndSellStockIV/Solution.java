@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 public class Solution {
     private class ListNode {
+     	public ListNode prev;
         public ListNode next;
+        public int index;
         public int buy;
         public int sell;
+        public int lose;	// profit lose if this node is merged
         
         public ListNode() {};
     }
@@ -18,8 +21,8 @@ public class Solution {
         // simplify prices to only low and max points
         int index = 0;
         int maxEarn = 0;
-        // for method 1-3
-        /*
+        // for method 1-3, 5
+        
         ArrayList<Integer> ps = new ArrayList<Integer>();
         do {
             while (index<n-1 && prices[index+1]<=prices[index]) index++;
@@ -36,9 +39,10 @@ public class Solution {
         if (n == 0) return 0;
         if (k >= n/2)
             return maxEarn;
-        */
+        
         
         // for method 4
+        /*
         ListNode head = new ListNode(), prev = head;
         int m = 0;
         do {
@@ -58,7 +62,7 @@ public class Solution {
         } while (index < n-1);
         if (m == 0) return 0;
         if (k >= m) return maxEarn;
-
+		*/
         // method 1, DP, time limit exceeded, O(nkn/2)
         /*
         int[][] maxEarns = new int[n/2+1][k+1];
@@ -149,6 +153,7 @@ public class Solution {
         */
         
         // method 4, use list, 322ms
+        /*
         for (;m>k;m--) {
             int minEarn = Integer.MAX_VALUE;
             prev = head;
@@ -171,6 +176,87 @@ public class Solution {
             if (node_prev != head && node_min.sell>node_prev.sell)
                 node_prev.sell = node_min.sell;
         }
+        */
+        
+        // method 5, use list and min heap, 341ms
+        ListNode[] heap = new ListNode[n/2];
+        // build heap
+        ListNode prev = null;
+        for (int i=0;i<n;i=i+2) {
+        	ListNode cur = new ListNode();
+        	cur.buy = ps.get(i);
+        	cur.sell = ps.get(i+1);
+        	cur.lose = cur.sell - cur.buy;
+        	cur.prev = prev;
+        	if (prev != null) {
+        		prev.next = cur;
+        		if (cur.sell>prev.sell)
+        			cur.lose = prev.sell - cur.buy;
+        	}
+        	prev = cur;
+        	int j = i/2;
+        	cur.index = j;
+        	heap[j] = cur;
+        	while (j>0) {
+        		int p = (j-1)/2;
+        		if (heap[p].lose <= heap[j].lose) break;
+        		ListNode temp = heap[j];
+        		heap[j] = heap[p];
+        		heap[j].index = j;
+        		heap[p] = temp;
+        		heap[p].index = p;
+        		j = p;
+        	}
+        }
+
+        // remove n/2-k nodes from heap
+        for (int i=0;i<n/2-k;i++) {
+        	int last = n/2-1-i;
+        	maxEarn -= heap[0].lose;
+        	if (last == k) break;
+        	ListNode node = heap[0];
+        	heap[0] = heap[last];
+        	heap[0].index = 0;
+        	heap[last] = null;
+        	shiftdown(heap, 0, last);
+        	// update prev and next node
+        	prev = node.prev;
+        	ListNode next = node.next;
+        	if (prev != null) {
+        		prev.next = next;
+        		if (prev.sell < node.sell) {
+        			prev.sell = node.sell;
+        			prev.lose = prev.sell - prev.buy;
+        			if (prev.prev!=null && prev.prev.sell<prev.sell)
+        				prev.lose = prev.prev.sell - prev.buy;
+        			shiftdown(heap, prev.index, last);
+        		}
+        	}
+        	if (next != null) {
+        		next.prev = prev;
+        		next.lose = next.sell - next.buy;
+        		if (prev!=null && prev.sell<next.sell)
+            		next.lose = prev.sell - next.buy;
+        		shiftdown(heap, next.index, last);
+        	}
+        }
         return maxEarn;
     }
+
+    private void shiftdown(ListNode[] heap, int p, int size) {
+    	int j = p*2+1;
+		while (j<size) {
+			if (j<size-1 && heap[j+1].lose<heap[j].lose)
+				j = j+1;
+			if (heap[j].lose>=heap[p].lose) break;
+			ListNode temp = heap[j];
+			heap[j] = heap[p];
+			heap[j].index = j;
+			heap[p] = temp;
+			heap[p].index = p;
+			p = j;
+			j = p*2+1;
+		}
+    }
+    
 }
